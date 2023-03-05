@@ -1,0 +1,46 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+.loading {
+  width: 100vw;
+  height: 100vh;
+  background-color: #232526;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.loader {
+  width: 250px;
+  height: 250px;
+  animation: RotateSvg 4s linear infinite;
+}
+.loader circle {
+  fill: transparent;
+  stroke: #34ace0;
+  stroke-width: 10;
+  stroke-dasharray: 440;
+  stroke-linecap: round;
+  stroke-dashoffset: 440;
+  animation: loaderAnimate 4s linear infinite forwards;
+}
+@keyframes loaderAnimate {
+  0%,
+  100% {
+    stroke-dashoffset: 440;
+  }
+  50% {
+    stroke-dashoffset: 0;
+  }
+  50.1% {
+    stroke-dashoffset: 880;
+  }
+}
+@keyframes RotateSvg {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
